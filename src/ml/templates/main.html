@@ -1,0 +1,299 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+          rel="stylesheet">
+
+    <title>CPG-105</title>
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "/css/font-awesome.css" %}">
+
+    <link rel="stylesheet" href="{% static "/css/templatemo-lava.css" %}">
+
+    <link rel="stylesheet" href="{% static "/css/owl-carousel.css" %}">
+
+</head>
+
+<body>
+
+<!-- ***** Preloader Start ***** -->
+<div id="preloader">
+    <div class="jumper">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<!-- ***** Preloader End ***** -->
+
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        CPG-105
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#welcome" class="menu-item">Home</a></li>
+                        <li class="scroll-to-section"><a href="#about" class="menu-item">About</a></li>
+                        <li class="scroll-to-section"><a href="#testimonials" class="menu-item">Get Started</a>
+                        </li>
+                        <li class="scroll-to-section"><a href="#contact-us" class="menu-item">Contact Us</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'CHECK' %}">Check DR stage level</a></li>
+                            <li><a href="auth/logout">Logout?</a></li>
+                        {% else %}
+                            <li><a href="auth/">Login</a></li>
+                        {% endif %}
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->
+
+
+<!-- ***** Welcome Area Start ***** -->
+<div class="welcome-area" id="welcome">
+
+    <!-- ***** Header Text Start ***** -->
+    <div class="header-text">
+        <div class="container">
+            <div class="row">
+                <div class="left-text col-lg-6 col-md-12 col-sm-12 col-xs-12"
+                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <h1>Simple App that we <em>CREATE</em></h1>
+                    <p>This is a web application, where in, <br>you can input your fundus image to check your DR
+                        stage level.</p>
+                    <a href="#about" class="main-button-slider">KNOW US BETTER</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Header Text End ***** -->
+</div>
+<!-- ***** Welcome Area End ***** -->
+
+<!-- ***** Features Big Item Start ***** -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                 data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                <div class="features-item">
+                    <div class="features-icon">
+                        <h2>01</h2>
+                        <img src="{% static "images/features-icon-2.png" %}" alt="">
+                        <h4>DR Analysis</h4>
+                        <p>Check whether you are are suffering from Diabetic Retinopathy or not.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                 data-scroll-reveal="enter bottom move 30px over 0.6s after 0.4s">
+                <div class="features-item">
+                    <div class="features-icon">
+                        <h2>02</h2>
+                        <img src="{% static "images/features-icon-1.png" %}" alt="">
+                        <h4>DR Stage Analysis</h4>
+                        <p>Check which stage of DR are you at, if you suffer from the disease.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                 data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                <div class="features-item">
+                    <div class="features-icon">
+                        <h2>03</h2>
+                        <img src="{% static "images/features-icon-3.png" %}" alt="">
+                        <h4>Send your results</h4>
+                        <p>You can download or mail your results to the doctor for verification.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Features Big Item End ***** -->
+
+<div class="left-image-decor"></div>
+
+<!-- ***** Features Big Item Start ***** -->
+<section class="section" id="promotion">
+    <div class="container">
+        <div class="row">
+            <div class="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
+                 data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+            </div>
+            <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
+                <ul>
+                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                        <img src="{% static "images/about-icon-01.png" %}" alt="">
+                        <div class="text">
+                            <h4>Check results</h4>
+                            <p>Check results at your own convenience, sitting at your home.</p>
+                        </div>
+                    </li>
+                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
+                        <img src="{% static "images/about-icon-02.png" %}" alt="">
+                        <div class="text">
+                            <h4>No more delays</h4>
+                            <p>You can get treatment sooner and treat your DR with fast test results.</p>
+                        </div>
+                    </li>
+                    <li data-scroll-reveal="enter right move 30px over 0.6s after 0.6s">
+                        <img src="{% static "images/about-icon-03.png" %}" alt="">
+                        <div class="text">
+                            <h4>Free access</h4>
+                            <p>You can check your results for FREE with upto 70% accuracy.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Features Big Item End ***** -->
+
+<div class="right-image-decor"></div>
+
+<!-- ***** Testimonials Starts ***** -->
+<section class="section" id="testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="center-heading">
+                    <h2>Get Started <em>NOW</em></h2>
+                    <p>You can register yourself here or login into your account.</p>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-12 col-sm-12 mobile-bottom-fix-big"
+                 data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                <div class="owl-carousel owl-theme" onclick="location.href='/auth';">
+                    <div class="item service-item">
+                        <div class="author">
+                        </div>
+                        <div class="testimonial-content">
+                            <h4>Registration Form</h4>
+                            <p><a href="auth/">Register</a></p>
+                        </div>
+                    </div>
+                    <div class="item service-item">
+                        <div class="author">
+                        </div>
+                        <div class="testimonial-content">
+                            <h4>Login Form</h4>
+                            <p><a href="auth/">Login</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Testimonials Ends ***** -->
+<!-- ***** Footer Start ***** -->
+<footer id="contact-us">
+    <div class="container">
+        <div class="footer-content">
+            <div class="row">
+                <!-- ***** Contact Form Start ***** -->
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="contact-form">
+                        <form id="contact" action="/contact" method="post">{% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <fieldset>
+                                        <input name="name" type="text" id="name" placeholder="Full Name" required
+                                               style="background-color: rgba(250,250,250,0.3);">
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <fieldset>
+                                        <input name="email" type="text" id="email" placeholder="E-Mail Address"
+                                               required style="background-color: rgba(250,250,250,0.3);">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                            <textarea name="message" rows="6" id="message" placeholder="Your Message"
+                                                      required
+                                                      style="background-color: rgba(250,250,250,0.3);"></textarea>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <button type="submit" id="form-submit" class="main-button">Send Message
+                                            Now
+                                        </button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- ***** Contact Form End ***** -->
+                <div class="right-content col-lg-6 col-md-12 col-sm-12">
+                    <h2>More About <em>Us</em></h2>
+                    <p>We are a team of 4 people - <br>Jayati Gumber<br>Sher Amir Singh Dullat<br>Kunal
+                        Gupta<br>Divyanshi Gupta
+                        <br><br>Our LinkedIn bios in respective order:
+                    </p>
+                    <ul class="social">
+                        <li><a href="https://www.linkedin.com/in/jayati-gumber/"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/kunal-gupta-0070a6192/"><i
+                                class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/divyanshi-gupta-54535b168/"><i
+                                class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sub-footer">
+                    <p>Copyright &copy; 2021 CPG-105 DR Detection & Classification</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="{% static "js/jquery-2.1.0.min.js" %}"></script>
+<!-- Bootstrap -->
+<script src="{% static "js/popper.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<!-- Plugins -->
+<script src="{% static "js/owl-carousel.js" %}"></script>
+<script src="{% static "js/scrollreveal.min.js" %}"></script>
+<script src="{% static "js/waypoints.min.js" %}"></script>
+<script src="{% static "js/jquery.counterup.min.js" %}"></script>
+<script src="{% static "js/imgfix.min.js" %}"></script>
+<!-- Global Init -->
+<script src="{% static "js/custom.js" %}"></script>
+</body>
+
+</html>

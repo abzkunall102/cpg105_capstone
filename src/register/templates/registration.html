@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <title>Register</title>
+</head>
+
+<body>
+
+<!-- ***** Header Area Start ***** -->
+
+<!-- ***** Header Area End ***** -->
+
+
+<div class="login_box">
+    <div class="login_header">
+        <h1> <a href="{% url 'MAIN' %}" style="color: white;">Diabetic Retinopathy Detection</a></h1>
+        <h3>Signup or Login Below!</h3>
+    </div>
+
+    <div id="first">
+        {% if user.is_authenticated %}
+            <h2> Logged In</h2>
+        {% else %}
+        {% endif %}
+        <form action="{% url 'LOGIN' %}" method="post">
+            {% csrf_token %}
+            <h4 style="text-align: center">{{ error }}</h4>
+
+            <input type="email" name="email" placeholder="Email Addresss" required>
+            <br>
+            <input type="password" name="password" placeholder="Password" required>
+            <br>
+            <input type="submit" name="login_button" value="Login">
+            <br>
+            <a href="#" id="signup" class="signup"> Need an account? Register here </a>
+        </form>
+    </div>
+    <div id="second">
+        <form action="{% url 'REGISTER' %}" method="post">
+            {% csrf_token %}
+            <h4 style="text-align: center; margin-top:10px;margin-bottom: 10px;">{{ error }}</h4>
+            <input type="text" name="fname" placeholder="First Name" required>
+            <br>
+            <input type="text" name="lname" placeholder="Last Name" required>
+            <br>
+            <input type="email" name="email" placeholder="Email" required>
+            <br>
+            <input id="p1" type="password" name="password" placeholder="Password" required>
+            <br>
+            <input id="p2" type="password" name="password2" oninput="check()" placeholder="Confirm Password" required>
+            <div id='message' style="font-size: 14px"></div>
+            <br>
+            <input type="submit" id="test" name="register_button" value="Register">
+            <div><a href="#" id="signin" class="signin">Already have an account? Sign in here</a></div>
+        </form>
+
+    </div>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="{% static "js/register.js" %}"></script>
+<script>
+    var check = function () {
+        $('#p1, #p2').on('keyup', function () {
+            if ($('#p1').val() == $('#p2').val()) {
+                $('#message').html('').css('color', 'black');
+                $('#test').prop("disabled", false)
+            } else {
+                $('#message').html('Not Matching').css('color', 'black');
+                $('#test').prop("disabled", true)
+            }
+        });
+    }
+
+</script>
+</body>
+
+</html>
